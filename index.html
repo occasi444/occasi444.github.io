@@ -1,17 +1,45 @@
 <!DOCTYPE html>
-
 <html lang="de">
 
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilder</title>
+    <title>Meine Bilder-App</title>
+
+    <!--
+    <link rel="manifest" href="manifest.json">
+    -->
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+    </style>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(() => console.log('Service Worker registriert'))
+                .catch(err => console.log('Service Worker Fehler:', err));
+        }
+    </script>
 
 </head>
 
 <body>
-    
+
+    <img src="bird.jpg">
+    <img src="bird.jpg">
+    <img src="bird.jpg">
+    <img src="bird.jpg">
+    <img src="bird.jpg">
+
 </body>
 
 </html>
